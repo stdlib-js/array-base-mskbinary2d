@@ -48,6 +48,11 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import mskbinary2d from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-mskbinary2d@deno/mod.js';
+```
+The previous example will load the latest bundled code from the deno branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/array-base-mskbinary2d/tags). For example,
+
+```javascript
 import mskbinary2d from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-mskbinary2d@v0.2.2-deno/mod.js';
 ```
 
@@ -102,7 +107,7 @@ var bernoulli = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-bern
 import filled2dBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-filled2d-by@deno/mod.js';
 import zeros2d from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-zeros2d@deno/mod.js';
 import add from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-ops-add@deno/mod.js';
-import mskbinary2d from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-mskbinary2d@v0.2.2-deno/mod.js';
+import mskbinary2d from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-mskbinary2d@deno/mod.js';
 
 var shape = [ 3, 3 ];
 
