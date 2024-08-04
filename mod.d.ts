@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2023 The Stdlib Authors.
@@ -16,9 +16,21 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
 
-// MAIN //
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
+
+import { Array2D } from '@stdlib/types/array';
+import { Shape2D } from '@stdlib/types/ndarray';
+
+/**
+* Binary callback.
+*
+* @param v1 - element from first input array
+* @param v2 - element from second input array
+* @returns result
+*/
+type Binary<T, U, V> = ( v1: T, v2: U ) => V;
 
 /**
 * Applies a binary callback to elements in two two-dimensional nested input arrays according to elements in a two-dimensional nested mask array and assigns results to elements in a two-dimensional nested output array.
@@ -26,11 +38,11 @@
 * ## Notes
 *
 * -   The function assumes that the input and output arrays have the same shape.
+* -   An element in an input array is "masked" if the corresponding element in the mask array is non-zero.
 *
-* @param {ArrayLikeObject<Array<Collection>>} arrays - array-like object containing two input nested arrays, an input nested mask array, and one output nested array
-* @param {NonNegativeIntegerArray} shape - array shape
-* @param {Callback} fcn - unary callback
-* @returns {void}
+* @param arrays - array containing two input nested arrays, an input nested mask array, and one output nested array
+* @param shape - array shape
+* @param fcn - binary callback
 *
 * @example
 * var ones2d = require( '@stdlib/array-base-ones2d' );
@@ -50,43 +62,9 @@
 * console.log( z );
 * // => [ [ 2.0, 0.0 ], [ 2.0, 2.0 ] ]
 */
-function mskbinary2d( arrays, shape, fcn ) {
-	var S0;
-	var S1;
-	var i0;
-	var i1;
-	var x0;
-	var y0;
-	var z0;
-	var m0;
-	var x;
-	var y;
-	var z;
-	var m;
-
-	S0 = shape[ 1 ];
-	S1 = shape[ 0 ];
-	if ( S0 <= 0 || S1 <= 0 ) {
-		return;
-	}
-	x = arrays[ 0 ];
-	y = arrays[ 1 ];
-	z = arrays[ 3 ];
-	m = arrays[ 2 ];
-	for ( i1 = 0; i1 < S1; i1++ ) {
-		x0 = x[ i1 ];
-		y0 = y[ i1 ];
-		z0 = z[ i1 ];
-		m0 = m[ i1 ];
-		for ( i0 = 0; i0 < S0; i0++ ) {
-			if ( m0[ i0 ] === 0 ) {
-				z0[ i0 ] = fcn( x0[ i0 ], y0[ i0 ] );
-			}
-		}
-	}
-}
+declare function mskbinary2d<T = unknown, U = unknown, V = unknown>( arrays: [ Array2D<T>, Array2D<U>, Array2D<number>, Array2D<V> ], shape: Shape2D, fcn: Binary<T, U, V> ): void;
 
 
 // EXPORTS //
 
-module.exports = mskbinary2d;
+export = mskbinary2d;
