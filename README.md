@@ -48,7 +48,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import mskbinary2d from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-mskbinary2d@esm/index.mjs';
+import mskbinary2d from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-mskbinary2d@v0.2.3-esm/index.mjs';
 ```
 
 #### mskbinary2d( arrays, shape, fcn )
@@ -108,7 +108,7 @@ var bernoulli = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-bern
 import filled2dBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-filled2d-by@esm/index.mjs';
 import zeros2d from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-zeros2d@esm/index.mjs';
 import add from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-add@esm/index.mjs';
-import mskbinary2d from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-mskbinary2d@esm/index.mjs';
+import mskbinary2d from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-mskbinary2d@v0.2.3-esm/index.mjs';
 
 var shape = [ 3, 3 ];
 
